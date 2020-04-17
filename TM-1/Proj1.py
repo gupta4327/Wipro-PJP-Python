@@ -1,4 +1,4 @@
-miles = int(input("How far would you like to go in miles?"))
+miles = float(input("How far would you like to go in miles?"))
 if miles <= 3:
     print("I suggest Bicycle to your destination")
 elif miles<=300:
