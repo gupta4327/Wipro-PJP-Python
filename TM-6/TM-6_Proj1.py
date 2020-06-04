@@ -6,7 +6,7 @@ except:
 else:
     dis =0
     count=0
-    sum=0
+    summ=0
     free =0
     final =0
     while(True):
@@ -14,16 +14,23 @@ else:
         if not line:
             break
         if not line.isspace():
-            count+=1
             list1 = line.split()
-            if list1[1]=='0':
+            print(list1)
+            if list1[1] == '0' or  list1[1] == "free":
+                pass
+            elif list1[0] == "discount":
+                pass
+            else:
+                count =count+1
+            if list1[1]=='0' or list1[1]=="free":
                 free +=1
-            sum += float(list1[1])
+            if list1[1] != "free" and list1[0]!="discount":
+                summ += float(list1[1])
             if list1[0]=="discount":
                 dis = int(list1[1])
-    final=sum-(sum*(dis/100))
+    final=summ- dis
     print("No. of item Purchased:",count)
     print("No. of free items:",free)
-    print("Amount to pay:",sum)
+    print("Amount to pay:",summ)
     print("Discount Given:",dis)
     print("Final amount paid:",final)
